@@ -118,11 +118,11 @@ function bici2() {
         console.log(nome,peso + 'kg');
 
     }
-
+    
 }
 function init() {
 
-    // bici();
+    bici();
     bici2();
 }
 
