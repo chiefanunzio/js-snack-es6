@@ -3,6 +3,7 @@
 // Stampare a schermo la bici con peso minore.
 
 
+
 function bici() {
     const Bici = [
 
@@ -36,9 +37,12 @@ function bici() {
     for (let i = 0; i < Bici.length; i++) {
 
         let bike = Bici[i];
-        let {nome, peso} = bike;
+        let {
+            nome,
+            peso
+        } = bike;
 
-        if(peso < lightBike.peso){
+        if (peso < lightBike.peso) {
 
             lightBike = bike;
         }
@@ -49,35 +53,85 @@ function bici() {
     console.log(lightBike);
 
 }
-bici();
 
 
 
+//-------------------------------------------------//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Creare un array di oggetti di squadre di calcio. 
-// Ogni squadra avrà diverse proprietà: 
-// nome, punti fatti, falli subiti.
+// Creare un array di oggetti di bici. 
+// Ogni bici avrà diverse proprietà: 
+// nome, peso, misura.
 // Nome sarà l'unica proprietà da compilare, 
 // le altre saranno tutte settate a 0.
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-// Generare numeri random al posto degli 0 nelle proprietà:
-// punti fatti e falli subiti
+function bici2() {
+    let bici = [
 
-// Usando la destrutturazione creiamo un nuovo array 
-// i cui elementi contengono solo nomi e falli subiti 
-// e stampiamo tutto in console
+        {
+            'nome': 'colnago',
+            'peso': 0,
+            'misura': 0
+        },
+        {
+            'nome': 'bianchi',
+            'peso': 0,
+            'misura': 0
+        },
+        {
+            'nome': 'legnano',
+            'peso': 0,
+            'misura': 0
+        },
+        {
+            'nome': 'campagnolo',
+            'peso': 0,
+            'misura': 0
+
+        }
+    ];
+    // peso e misura
+    // Generare numeri random al posto degli 0 nelle proprietà:
+
+    for (let i = 0; i < bici.length; i++) {
+        let bike = bici[i];
+
+
+        bike.peso = getRandom(0, 10);
+        bike.misura = getRandom(20, 54);
+
+    }
+    console.log(bici);
+    // Usando la destrutturazione creiamo un nuovo array 
+    // i cui elementi contengono solo nomi e peso 
+    // e stampiamo tutto in console
+
+    for (let i = 0; i < bici.length; i++) {
+        let arr = [];
+
+        const bike = bici[i];
+
+        let [nome, peso] = [bike.nome, bike.peso];
+        arr.push([nome, peso]);
+        console.log(nome,peso + 'kg');
+
+    }
+
+}
+function init() {
+
+    // bici();
+    bici2();
+}
+
+$(document).ready(init);
+
+
+
+
+
+
+
+
