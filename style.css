@@ -5,11 +5,8 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items : center;
     height: 100vh;
-    color: azure;
-    background-color: cadetblue;
-
+    background-image: url(mem.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
 }
